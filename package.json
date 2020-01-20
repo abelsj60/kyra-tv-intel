@@ -1,0 +1,52 @@
+{
+  "name": "kyra-tv",
+  "version": "1.0.0",
+  "description": "Every PAQ video, from always.",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack -p",
+    "build:serve": "webpack -p -w & nodemon ./server/index.js",
+    "start": "node ./server/index.js",
+    "start:dev": "webpack --env.NODE_ENV='dev' --mode development -w & nodemon ./server/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "James Abels",
+  "repository": {},
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@babel/core": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "@babel/preset-react": "^7.8.3",
+    "babel-eslint": "^10.0.3",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-styled-components": "^1.10.6",
+    "chance": "^1.1.4",
+    "core-js": "^3.6.4",
+    "eslint": "^6.8.0",
+    "eslint-plugin-react": "^7.18.0",
+    "eslint-plugin-react-hooks": "^2.3.0",
+    "install": "^0.13.0",
+    "npm": "^6.13.6",
+    "remove-files-webpack-plugin": "^1.2.1",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "chart.js": "^2.9.3",
+    "dayjs": "^1.8.19",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "googleapis": "^47.0.0",
+    "group-by-time": "^1.0.0",
+    "node-fetch": "^2.6.0",
+    "react": "^16.12.0",
+    "react-chartjs-2": "^2.8.0",
+    "react-dom": "^16.12.0",
+    "react-router-dom": "^5.1.2",
+    "styled-bootstrap-components": "^4.0.0",
+    "styled-components": "^5.0.0",
+    "volleyball": "^1.5.1"
+  }
+}
