@@ -158,19 +158,22 @@ export default function App() {
           //  -b. The /vid-volume endpoint will call YouTube and check the channel's total videos.
           //  -c. The /vid-volume endpoint will return 304 for no new videos and 200 for new videos.
           //  -d. If a 200, response.ok will be true and we'll call /all-channel-videos to get them.
-          // setInterval(async () => {
-          //   try {
-          //     const response = await fetch(
-          //       `/api/vid-volume/${getShowChannelId(showIdx)}/${episodeData[showName].length}`
-          //     );
 
-          //     if (response.ok) {
-          //       await fetchDataAndSetState();
-          //     }
-          //   } catch (error) {
-          //     console.error('Error checking for new videos:', error);
-          //   }
-          // }, 60000);
+          // ! DISABLE THE FOLLOWING SETINTERVAL IF YOU WANT TO SAVE YOUTUBE QUOTA ITEMS!!!!
+
+          setInterval(async () => {
+            try {
+              const response = await fetch(
+                `/api/vid-volume/${getShowChannelId(showIdx)}/${episodeData[showName].length}`
+              );
+
+              if (response.ok) {
+                await fetchDataAndSetState();
+              }
+            } catch (error) {
+              console.error('Error checking for new videos:', error);
+            }
+          }, 60000);
         } catch (error) {
           setIsError(true);
           console.error('Error getting YouTube data:', error);
