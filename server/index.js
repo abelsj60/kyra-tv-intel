@@ -23,7 +23,7 @@ app.get('/api/all-channel-videos/:channelId', async (req, res, next) => {
     // Docs: https://github.com/googleapis/google-api-nodejs-client
     const youTube = await google.youtube({
       version: process.env.YOUTUBE_API_VERSION,
-      auth: process.env.YOUTUBE_API_KEY_2
+      auth: process.env.YOUTUBE_API_KEY
     });
 
     // Get uploads playlist ID
