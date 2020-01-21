@@ -1,4 +1,5 @@
 import constants from '../helpers/constants';
+import dayjs from 'dayjs';
 import normalizer from '../helpers/normalizer';
 import React from 'react';
 import Selector from './Selector';
@@ -37,6 +38,7 @@ const PlainText = styled.p`
   margin-top: ${p => p.top ? p.top : '0px'};
   margin-bottom: 7px;
   margin-left: ${p => p.left && p.left};
+  margin-right: ${p => p.right && p.right};
   font-size: ${p => p.small && '.9rem'};
   font-weight: ${p => p.bold ? 'bold' : 'normal'};
 `;
@@ -53,6 +55,7 @@ export default function EpisodeList(props) {
   } = props;
   // Select data type based on whether we're in comp or episode mode.
   const dataToMap = isComps ? compData : episodeData[normalizer(label)];
+  console.log('dm:', dataToMap && dataToMap);
 
   return (
     !isComps || (isComps && dataToMap.length > 0) ? (
@@ -70,8 +73,9 @@ export default function EpisodeList(props) {
               <InnerContainer>
                 <TextBox>
                   <Heading>
-                    <PlainText small={true}>{idx + 1}.&nbsp;</PlainText>
+                    <PlainText right="5px" small={true}>{idx + 1}.</PlainText>
                     <PlainText small={true}>{episode.channelTitle}</PlainText>
+                    <PlainText left="7px" small={true}>({dayjs(episode.publishedAt).format('MM/DD/YYYY')})</PlainText>
                   </Heading>
                   <PlainText bold={true} >{episode.title}</PlainText>
                 </TextBox>
