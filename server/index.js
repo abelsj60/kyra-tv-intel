@@ -82,6 +82,10 @@ app.get('/api/vid-volume/:channelId/:currentNumOfVideos', async (req, res, next)
     // Docs: https://developers.google.com/youtube/v3/docs/playlistItems
     const playlistData = await youTube.playlistItems.list(playlistOptions);
 
+    // Test if the new number matches the old number. If the new number is bigger, send a 200, otherwise a 304.
+    // If the React app gets a 200, it will ask the API to get the new list of videos.
+    // Note: This can/should be refactored to either limit what's requested from YouTube (didn't seem possible)
+    // or to store the result, say in a database, so as not to make a duplicative call...
     res.status(playlistData.data.pageInfo.totalResults > currentNumOfVideos ? 200 : 304).end();
   } catch (error) {
     next(error);
