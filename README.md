@@ -8,4 +8,4 @@ After cloning and npm installing the app, plase create your own .env file. The .
 
 See the scripts in package.json to build the React app (via Webpack) and start the Express server. Best bets: 
 * npm run start:dev
-* npm build:serve
+* npm run build:serve
