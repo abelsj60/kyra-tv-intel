@@ -55,7 +55,6 @@ export default function EpisodeList(props) {
   } = props;
   // Select data type based on whether we're in comp or episode mode.
   const dataToMap = isComps ? compData : episodeData[normalizer(label)];
-  console.log('dm:', dataToMap && dataToMap);
 
   return (
     !isComps || (isComps && dataToMap.length > 0) ? (
