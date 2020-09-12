@@ -37,7 +37,7 @@
     "express": "^4.17.1",
     "googleapis": "^47.0.0",
     "group-by-time": "^1.0.0",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.1",
     "react": "^16.12.0",
     "react-chartjs-2": "^2.8.0",
     "react-dom": "^16.12.0",
